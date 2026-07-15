@@ -376,24 +376,28 @@ body{
 
 @media (max-width:700px){
 
-   #overlay{
+    #overlay{
 
-    width:calc(100vw - 50px);
+        width:calc(100vw - 80px);
 
-    min-height:auto;
+        min-height:auto;
 
-    max-height:80vh;
+        max-height:75vh;
 
-    overflow:auto;
+        overflow:auto;
 
-    padding:28px;
+        padding:22px;
 
-}
+        gap:16px;
+
+    }
 
 
     .nombre{
 
-        font-size:26px;
+        font-size:22px;
+
+        max-width:200px;
 
     }
 
@@ -401,14 +405,16 @@ body{
     .autor,
     .anio{
 
-        font-size:14px;
+        font-size:13px;
 
     }
 
 
     .descripcion{
 
-        font-size:13px;
+        font-size:12px;
+
+        line-height:1.4;
 
     }
 

@@ -1,0 +1,344 @@
+/* ===================================== */
+/* RESET */
+/* ===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:wght@700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    font-family:Helvetica, Arial, sans-serif;
+
+    cursor:none;
+
+}
+
+
+/* ===================================== */
+/* LOGO */
+/* ===================================== */
+
+#logo{
+
+    position:fixed;
+
+    top:35px;
+    left:35px;
+
+    width:150px;
+
+    z-index:1000;
+
+    user-select:none;
+
+    pointer-events:auto;
+
+    cursor:pointer;
+
+}
+
+
+/* ===================================== */
+/* VIEWPORT */
+/* ===================================== */
+
+#viewport{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+
+/* ===================================== */
+/* WORLD */
+/* ===================================== */
+
+#world{
+
+    position:absolute;
+
+    width:2400px;
+    height:1400px;
+
+    left:0;
+    top:0;
+
+}
+
+
+/* ===================================== */
+/* OBJETOS */
+/* ===================================== */
+
+.objeto{
+
+    position:absolute;
+
+    user-select:none;
+
+    will-change:transform;
+
+    transition:
+        opacity .25s,
+        filter .25s;
+
+}
+
+.contenido{
+
+    position:relative;
+
+}
+
+.objeto img{
+
+    width:100%;
+
+    display:block;
+
+    pointer-events:none;
+
+}
+
+.objeto.inactivo{
+
+    opacity:.28;
+
+    filter:blur(2px);
+
+}
+
+.numero{
+
+    position:absolute;
+
+    left:-18px;
+    top:-28px;
+
+    font-size:18px;
+
+    font-weight:400;
+
+    letter-spacing:.03em;
+
+    pointer-events:none;
+
+    transition: color .2s ease;
+
+}
+
+
+/* ===================================== */
+/* CURSOR */
+/* ===================================== */
+
+#cursor{
+
+    position:fixed;
+
+    width:20px;
+    height:20px;
+
+    border:5px solid #000;
+
+    border-radius:50%;
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
+    z-index:99999;
+
+    transition:
+    width .18s ease,
+    height .18s ease,
+    background .18s ease,
+    border-color .18s ease,
+    opacity .20s ease,
+    transform .20s ease;
+}
+
+#cursor.hover{
+
+    width:34px;
+    height:34px;
+
+}
+
+#cursor.drag{
+
+    background:#000;
+
+}
+
+
+/* ================================================= */
+/* OVERLAY */
+/* ================================================= */
+
+#overlay{
+
+    position:fixed;
+    overflow:visible;
+
+    width:480px;
+    min-height:320px;
+
+    padding:40px;
+
+    color:black;
+
+    display:none;
+
+    flex-direction:column;
+
+    gap:24px;
+
+    z-index:5000;
+
+    pointer-events:auto;
+
+    opacity:0;
+
+    transform:scale(.96);
+
+    transition:
+        opacity .18s,
+        transform .18s;
+
+         isolation:isolate;
+
+}
+
+#overlay::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:110%;
+    height:110%;
+
+    top:-5%;
+    left:-5%;
+
+    background:var(--color-overlay);
+
+    transform:rotate(-8deg);
+
+    z-index:-1;
+
+}
+
+#overlay.abierto{
+
+    display:flex;
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+
+/* NOMBRE DE LA PIEZA */
+
+.nombre{
+
+    font-family:"Mona Sans", Helvetica, Arial, sans-serif;
+
+    font-weight:700;
+
+    font-size:32px;
+
+    line-height:1;
+
+    max-width:280px;
+
+}
+
+
+/* NÚMERO */
+
+.numero-overlay{
+
+    position:absolute;
+
+    top:35px;
+    right:30px;
+
+    font-family:Helvetica, Arial, sans-serif;
+
+    font-size:16px;
+
+}
+
+
+/* DATOS */
+
+.datos{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:10px;
+
+}
+
+
+.autor,
+.anio,
+.descripcion{
+
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    font-weight:400;
+
+}
+
+
+.autor,
+.anio{
+
+    font-size:16px;
+
+}
+
+
+.descripcion{
+
+    font-size:15px;
+
+    line-height:1.45;
+
+}
+
+#cursor.inactivo{
+
+    opacity:.28;
+
+    border-color:#777;
+
+    transform:translate(-50%,-50%) scale(.85);
+
+}

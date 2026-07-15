@@ -1,0 +1,329 @@
+html,
+body{
+
+    margin:0;
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    font-family:Helvetica,Arial,sans-serif;
+
+}
+
+/* ==========================================
+   BOTÓN VOLVER
+========================================== */
+
+#sidebar{
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:72px;
+    height:100vh;
+
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+
+    z-index:1000;
+
+}
+
+.logoDesvio{
+
+    margin-top:24px;
+    margin-left:20px;
+
+}
+
+.logoDesvio img{
+
+    width:32px;
+    height:auto;
+
+    display:block;
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
+
+/* ==========================================
+   BUSCADOR
+========================================== */
+
+#busqueda{
+
+    position:fixed;
+
+    top:28px;
+    right:40px;
+
+    width:180px;
+
+    border:none;
+
+    border-bottom:1px solid #ddd;
+
+    outline:none;
+
+    background:none;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    color:#000;
+
+}
+
+#busqueda::placeholder{
+
+    color:#bbb;
+
+}
+
+/* ==========================================
+   LISTA
+========================================== */
+
+#lista{
+
+    position:absolute;
+
+    right:8vw;
+    top:18vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+
+    gap:14px;
+
+}
+
+.entrada{
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:.25s;
+
+}
+
+/* título */
+
+.titulo{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    line-height:1;
+
+    transition:.25s;
+
+}
+
+/* ==========================================
+   INFO
+========================================== */
+
+.infoEvento{
+
+    margin-top:14px;
+
+    font-size:15px;
+
+    line-height:1.45;
+
+    text-align:right;
+
+    opacity:0;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:.25s;
+
+}
+
+.infoEvento.visible{
+
+    opacity:1;
+
+    max-height:120px;
+
+}
+
+.fecha{
+
+    font-weight:700;
+
+    margin-bottom:4px;
+
+}
+
+/* ==========================================
+   ACCIONES
+========================================== */
+
+#acciones{
+
+    position:absolute;
+
+     display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.25s;
+
+}
+
+#acciones.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+#comprar{
+
+    padding:10px 18px;
+
+    background:none;
+
+    border:1px solid #000;
+
+    color:#000;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    letter-spacing:.08em;
+
+    cursor:pointer;
+
+    transition: opacity 0.4s ease;
+
+}
+
+#comprar:disabled{
+
+    color:#999;
+
+    border-color:#999;
+
+    cursor:not-allowed;
+
+}
+
+#cerrarSeleccion{
+
+    border:none;
+
+    background:none;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    padding:0;
+
+}
+
+#soldOut{
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    width:96px;
+
+    transform:translateY(-50%);
+
+    text-align:center;
+
+    color:#FF0000;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    pointer-events:none;
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+
+}
+
+/* ==========================================
+   TACHA ROJA
+========================================== */
+
+.entrada.agotada{
+
+    position:relative;
+
+}
+
+.entrada.agotada::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-8px;
+    right:-8px;
+
+    top:25px;
+
+    height:8px;
+
+    background:#FF0000;
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    animation:tachar .35s forwards;
+
+}
+
+@keyframes tachar{
+
+    to{
+
+        transform:scaleX(1);
+
+    }
+
+}

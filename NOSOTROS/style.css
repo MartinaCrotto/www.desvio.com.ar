@@ -1,0 +1,51 @@
+html,
+body{
+    margin:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    overflow:hidden;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#texto{
+    max-width:750px;
+    width:70vw;
+    color:white;
+    font-family:Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size:18px;
+    line-height:1.5;
+    transform:rotate(0deg);
+    transition:transform .45s ease;
+}
+
+
+#sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:72px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    z-index:1000;
+}
+
+.logoDesvio{
+    margin-top:24px;
+}
+
+.logoDesvio img{
+    width:32px;
+    height:auto;
+    cursor:pointer;
+    user-select:none;
+    display:block;
+}

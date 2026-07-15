@@ -697,16 +697,25 @@ objetoAbierto = objeto;
 
     }
 
-    // ---------- AJUSTE FINAL ----------
+// ---------- AJUSTE FINAL ----------
+
 const margenPantalla = 80;
 
-x = Math.max(
-    margenPantalla,
-    Math.min(
-        x,
-        window.innerWidth - overlay.offsetWidth - margenPantalla
-    )
-);
+if(window.innerWidth <= 700){
+
+    x = 30;
+
+}else{
+
+    x = Math.max(
+        margenPantalla,
+        Math.min(
+            x,
+            window.innerWidth - overlay.offsetWidth - margenPantalla
+        )
+    );
+
+}
 
 y = Math.max(
     margenPantalla,

@@ -49,3 +49,31 @@ body{
     user-select:none;
     display:block;
 }
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width:600px){
+
+    #texto{
+
+        width:78vw;
+
+        max-width:none;
+
+        font-size:14px;
+
+        line-height:1.45;
+
+    }
+
+
+    .logoDesvio img{
+
+        width:26px;
+
+    }
+
+}

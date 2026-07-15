@@ -327,3 +327,65 @@ body{
     }
 
 }
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width:600px){
+
+    #busqueda{
+
+        top:20px;
+
+        right:20px;
+
+        width:130px;
+
+        font-size:13px;
+
+    }
+
+
+    #lista{
+
+        right:8vw;
+
+        top:20vh;
+
+        gap:12px;
+
+    }
+
+
+    .titulo{
+
+        font-size:34px;
+
+    }
+
+
+    .infoEvento{
+
+        font-size:13px;
+
+    }
+
+
+    #acciones{
+
+        gap:12px;
+
+    }
+
+
+    #comprar{
+
+        font-size:12px;
+
+        padding:8px 14px;
+
+    }
+
+}

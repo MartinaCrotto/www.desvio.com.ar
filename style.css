@@ -136,3 +136,57 @@ body{
     font-size:18px;
 
 }
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width:600px){
+
+    #logoDesvio{
+
+        width:85vw;
+
+    }
+
+
+    #menu{
+
+        width:85vw;
+        height:42vw;
+
+    }
+
+
+    #menuBtn{
+
+        left:15vw;
+
+        bottom:-8vw;
+
+        transform:scale(.8);
+
+        transform-origin:center;
+
+    }
+
+
+    #menuOpciones{
+
+        left:10vw;
+
+        bottom:-30vw;
+
+        gap:10px;
+
+    }
+
+
+    #menuOpciones a{
+
+        font-size:15px;
+
+    }
+
+}

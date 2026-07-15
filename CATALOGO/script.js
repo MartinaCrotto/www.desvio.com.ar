@@ -245,6 +245,7 @@ const ovAutor = document.getElementById("ovAutor");
 const ovDescripcion = document.getElementById("ovDescripcion");
 
 let overlayAbierto = false;
+let objetoAbierto = null;
 
 // VOLVER A LA HOME ======================================================
 
@@ -368,6 +369,72 @@ document.addEventListener("mousemove", (e) => {
 
     world.style.transform =
         `translate(${worldX}px,${worldY}px)`;
+});
+
+// ======================================================
+// DRAG TÁCTIL MOBILE
+// ======================================================
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+let touchWorldX = 0;
+let touchWorldY = 0;
+
+
+document.addEventListener("touchstart", (e)=>{
+
+    if(e.touches.length !== 1) return;
+
+    dragging = true;
+    seArrastro = false;
+
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+
+    touchWorldX = worldX;
+    touchWorldY = worldY;
+
+}, {passive:false});
+
+
+document.addEventListener("touchmove", (e)=>{
+
+    if(!dragging) return;
+
+    e.preventDefault();
+
+    seArrastro = true;
+
+    const x = e.touches[0].clientX;
+    const y = e.touches[0].clientY;
+
+
+    worldX = touchWorldX + (x - touchStartX);
+    worldY = touchWorldY + (y - touchStartY);
+
+
+    const margen = 60;
+
+    const minX = window.innerWidth - 2400 - margen;
+    const minY = window.innerHeight - 1400 - margen;
+
+
+    worldX = Math.min(margen, Math.max(minX, worldX));
+    worldY = Math.min(margen, Math.max(minY, worldY));
+
+
+    world.style.transform =
+    `translate(${worldX}px,${worldY}px)`;
+
+
+}, {passive:false});
+
+
+document.addEventListener("touchend", ()=>{
+
+    dragging=false;
+
 });
 
 // FUNCIÓN OBJETO ESQUIVO ======================================================
@@ -568,6 +635,8 @@ objetos.forEach(obj => {
 
 function abrirOverlay(objeto) {
 
+objetoAbierto = objeto;
+
     ovNumero.textContent = objeto.objeto;
     ovNombre.textContent = objeto.nombre;
     ovAnio.textContent = objeto.anio;
@@ -681,6 +750,8 @@ function cerrarOverlay() {
     overlayAbierto = false;
 
     cursor.classList.remove("inactivo");
+
+    objetoAbierto = null;
 }
 
 // EFECTO CURSOR SOBRE OBJETOS ======================================================

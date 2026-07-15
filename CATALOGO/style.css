@@ -342,3 +342,80 @@ body{
     transform:translate(-50%,-50%) scale(.85);
 
 }
+
+@media (max-width:700px){
+
+    html,
+    body{
+
+        cursor:auto;
+
+    }
+
+
+    #cursor{
+
+        display:none;
+
+    }
+
+}
+
+@media (max-width:700px){
+
+    #logo{
+
+        width:100px;
+
+        top:25px;
+        left:25px;
+
+    }
+
+}
+
+@media (max-width:700px){
+
+   #overlay{
+
+    width:calc(100vw - 50px);
+
+    min-height:auto;
+
+    max-height:80vh;
+
+    overflow:auto;
+
+    padding:28px;
+
+}
+
+
+    .nombre{
+
+        font-size:26px;
+
+    }
+
+
+    .autor,
+    .anio{
+
+        font-size:14px;
+
+    }
+
+
+    .descripcion{
+
+        font-size:13px;
+
+    }
+
+}
+
+#viewport{
+
+    touch-action:none;
+
+}
